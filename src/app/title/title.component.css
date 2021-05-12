@@ -1,11 +1,65 @@
 :host{
+  --bg-color: #E1E2E1;
+  --font-color-basic: white;
+  --font-color-brand: #3C4AA7;
+
   display:block;
-  background: powderblue;
+  background: var(--bg-color);
   width: 600px;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 input{
   all: unset;
+}
+
+.userName{
+  color: var(--font-color-basic);
+  font-size: 50px;
+  transform: rotate(90deg);
+  transform-origin: left top;
+  position:relative;
+  left: 55px;
+}
+
+.userName-name{
+  width: 300px;
+  color: var(--font-color-brand);
+}
+
+.streak{
+  float: right;
+  position: relative;
+  bottom: 65px;
+  right: 0;
+}
+
+.streak--num{
+  color: var(--font-color-brand);
+  font-size: 100px;
+  text-align: center;
+}
+
+.streak--text{
+  color: var(--font-color-basic);
+  text-align: center;
+  font-size: 130%;
+  position: relative;
+  bottom: 20px;
+}
+
+.goal{
+  color: var(--font-color-brand);
+  font-size: 50px;
+}
+
+.goal-text{
+  width: 500px;
+  margin-top: 90px;
+  float: right;
+  text-align: right;
 }

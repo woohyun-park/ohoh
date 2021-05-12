@@ -1,7 +1,10 @@
-<div>hi,
-  <input [(ngModel)]="userName" placeholder="name"/>
+<div class="userName">hi,
+  <input [(ngModel)]="userName" class="userName-name" placeholder="name"/>
 </div>
-<div>{{streak}} days streak</div>
-<div>
-  <input [(ngModel)]="goal" placeholder="goal"/>
+<div class="streak">
+  <div class="streak--num">{{streak}}</div>
+  <div class="streak--text">days streak</div>
+</div>
+<div class="goal">
+  <input [(ngModel)]="goal" class="goal-text" placeholder="goal"/>
 </div>

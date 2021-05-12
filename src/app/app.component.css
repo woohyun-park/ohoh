@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+:host{
+  --font: 'RixYeoljeongdo_Regular';
+}
+
 *{
-  font-family: 'RixYeoljeongdo_Regular';
+  font-family: var(--font);
 }

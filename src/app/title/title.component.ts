@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TitleComponent implements OnInit {
   userName: string = "dooddi";
-  streak: number = 1;
+  streak: number = 42;
   goal: string = "매일매일 프로그래밍"
 
   constructor() { }

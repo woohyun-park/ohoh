@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from "rxjs";
+import { TodoService } from "./todo.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,14 @@ export class TitleService {
 
   constructor() {
     this.userName = localStorage.userName !== undefined ? localStorage.userName : "";
-    this.streak = localStorage.streak !== undefined ? localStorage.streak : 1;
+    this.streak = localStorage.streak !== undefined ? localStorage.streak : 0;
     this.goal = localStorage.goal !== undefined ? localStorage.goal : "";
     this.isUpdated = localStorage.isUpdated !== undefined ? JSON.parse(localStorage.isUpdated) : false;
+  }
+
+  setStreakZero(){
+    this.streak = 0;
+    localStorage.streak = 0;
   }
 
   sendStreak(streak: number){
@@ -30,7 +36,6 @@ export class TitleService {
   }
 
   updateStreak(isPositive: boolean): void {
-    console.log(this.isUpdated, isPositive);
     if(!this.isUpdated && isPositive){
       this.streak++;
       this.sendStreak(this.streak);

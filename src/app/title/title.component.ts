@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TitleService } from "../title.service";
 
 @Component({
   selector: 'app-title',
@@ -7,30 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TitleComponent implements OnInit {
-  userName: string = "";
-  streak: number = 0;
-  goal: string = "";
+  userName: string;
+  streak: number;
+  goal: string;
 
-  constructor() { }
+  constructor(private titleService: TitleService) {
+    titleService.streakTransfer.subscribe(streak => {
+      this.streak = streak;
+      console.log(streak);
+    })
+  }
 
   ngOnInit(): void {
-    if(localStorage.userName !== undefined)
-      this.userName = localStorage.userName;
-    if(localStorage.streak !== undefined)
-      this.streak = localStorage.streak;
-    if(localStorage.goal !== undefined)
-      this.goal = localStorage.goal;
+    this.userName = this.titleService.userName;
+    this.streak = this.titleService.streak;
+    this.goal = this.titleService.goal;
+  }
+
+  updateStreak(): void{
+    this.streak++;
+    this.titleService.updateStreak();
   }
 
   updateUserName(): void {
-    localStorage.userName = this.userName;
-  }
-
-  updateStreak(): void {
-    localStorage.streak = this.streak;
+    this.titleService.updateUserName(this.userName);
   }
 
   updateGoal(): void {
-    localStorage.goal = this.goal;
+    this.titleService.updateGoal(this.goal);
   }
 }

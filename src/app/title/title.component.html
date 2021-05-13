@@ -4,7 +4,10 @@
 </div>
 
 <div class="streak">
-  <div class="streak--num">{{streak}}</div>
+  <input [(ngModel)]="streak" (ngModelChange)="updateStreak()"
+    class="streak--num" readonly/>
+  <!-- <div class="streak--num"
+  (click)="updateStreak()">{{streak}}</div> -->
   <div class="streak--text">days streak</div>
 </div>
 

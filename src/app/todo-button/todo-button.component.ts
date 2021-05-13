@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { TitleService } from "../title.service";
 
 @Component({
   selector: 'app-todo-button',
@@ -11,7 +12,7 @@ export class TodoButtonComponent implements OnInit {
   textColor: string = '#3C4AA7';
   bgColor: string = 'white';
 
-  constructor() { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +34,8 @@ export class TodoButtonComponent implements OnInit {
   changeColor(): void{
     this.bgColor = this.bgColor === '#3C4AA7' ? 'white' : '#3C4AA7';
     this.textColor = this.textColor === '#3C4AA7' ? 'white' : '#3C4AA7';
+
+    this.titleService.updateStreak();
   }
 
   getBGColor(): string{

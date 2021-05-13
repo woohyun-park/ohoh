@@ -7,8 +7,20 @@
 
 :host{
   --font: 'RixYeoljeongdo_Regular';
+  --bg-color: #E1E2E1;
 }
 
 *{
   font-family: var(--font);
+}
+
+.footer{
+  width: 600px;
+  height: 100px;
+    text-align: center;
+  background-color: var(--bg-color);
+}
+
+.footer-img{
+  width: 100px;
 }

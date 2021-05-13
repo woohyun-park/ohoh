@@ -5,6 +5,7 @@
   display: block;
   width: 600px;
   padding-bottom: 50px;
+  min-height: 325px;
 }
 
 .todo-run{

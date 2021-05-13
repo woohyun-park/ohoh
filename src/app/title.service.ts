@@ -8,16 +8,16 @@ export class TitleService {
   private message = new Subject<number>();
   messageTransfer = this.message.asObservable();
 
-  userName: string = "";
-  streak: number = 1;
-  goal: string = "";
-  isUpdated: boolean = false;
+  userName: string;
+  streak: number;
+  goal: string;
+  isUpdated: boolean;
 
   constructor() {
     this.userName = localStorage.userName !== undefined ? localStorage.userName : "";
     this.streak = localStorage.streak !== undefined ? localStorage.streak : 1;
     this.goal = localStorage.goal !== undefined ? localStorage.goal : "";
-    this.isUpdated = localStorage.isUpdate !== undefined ? JSON.parse(localStorage.isUpdated) : false;
+    this.isUpdated = localStorage.isUpdated !== undefined ? JSON.parse(localStorage.isUpdated) : false;
   }
 
   sendStreak(streak: number){
@@ -53,6 +53,6 @@ export class TitleService {
 
   updateIsUpdated(isUpdated: boolean){
     this.isUpdated = isUpdated;
-    localStorage.isUpdated = this.isUpdated;
+    localStorage.isUpdated = JSON.stringify(this.isUpdated);
   }
 }

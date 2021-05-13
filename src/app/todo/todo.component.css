@@ -3,17 +3,59 @@
   --color-brand: #3C4AA7;
 
   display: block;
-  height: 450px;
   width: 600px;
+  padding-bottom: 50px;
 }
 
 .todo-run{
+  position: relative;
   display: block;
   text-align: center;
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+}
+
+.todo-line{
+  margin:auto;
+
+  width: 400px;
+  height: 5px;
+
+  overflow: hidden;
+}
+
+.todo-line-white{
+  margin: auto;
+
+  width: 400px;
+  height: 5px;
+
+  background-color: var(--color-basic);
+}
+
+.todo-line-blue{
+  margin: auto;
+
+  width: 400px;
+  height: 5px;
+
+  background-color: var(--color-brand);
+
+  transition: 0.5s;
+  transform: translate(-400px, -5px);
+}
+
+.todo-run-person{
+  position: absolute;
+  top: -80px;
+  left: 50px;
+
+  width: 100px;
+
+  transition: 1s;
+  transition-timing-function: cubic-bezier();
 }
 
 .todo-add{

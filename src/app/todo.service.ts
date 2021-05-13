@@ -80,4 +80,25 @@ export class TodoService {
     this.todos = tmp1;
     this.updateTodos();
   }
+
+  runLine(){
+    let numFinished: number = 0;
+    this.todos.forEach(n => {
+      if(n.isFinished === true){
+        numFinished++;
+      }
+    });
+    return `translate(${400*numFinished/this.todos.length-400}px, -5px)`;
+  }
+
+  runPerson(){
+    console.log("runPerson");
+    let numFinished: number = 0;
+    this.todos.forEach(n => {
+      if(n.isFinished === true){
+        numFinished++;
+      }
+    });
+    return `${400*numFinished/this.todos.length + 50}px`;
+  }
 }

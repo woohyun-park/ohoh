@@ -7,6 +7,7 @@ import { TitleService } from "./title.service";
 })
 export class TodoService {
   todos: Todo[];
+  id: number;
 
   constructor(private titleService: TitleService) {
     // let tmp: Todo[] = [
@@ -16,20 +17,31 @@ export class TodoService {
     // ];
     // localStorage.todos = JSON.stringify(tmp);
     this.todos = localStorage.todos !== undefined ? JSON.parse(localStorage.todos) : [];
+    this.id = localStorage.id !== undefined ? JSON.parse(localStorage.id) : 1;
   }
 
   ngOnInit(){
 
   }
 
-  updateTodos(todos: Todo[]){
-    console.log(this.todos);
+  updateId(){
+    localStorage.id = JSON.stringify(this.id);
+  }
+
+  updateTodos(){
     localStorage.todos = JSON.stringify(this.todos);
   }
 
   updateIsFinished(id: number, isFinished: boolean){
-    this.todos[id-1].isFinished = isFinished;
-    this.updateTodos(this.todos);
+    let index: number;
+    this.todos.forEach((a, i) => {
+      if(a.id === id){
+        index = i;
+        return;
+      }
+    });
+    this.todos[index].isFinished = isFinished;
+    this.updateTodos();
     this.updateStreak();
   }
 
@@ -41,5 +53,31 @@ export class TodoService {
     } else {
       this.titleService.updateStreak(false);
     }
+  }
+
+  addTodo(text: string){
+    let tmp: Todo = {id: this.id++, text: text, isFinished: false};
+    this.todos.push(tmp);
+    this.updateTodos();
+    this.updateId();
+    if(this.titleService.isUpdated === true){
+      this.titleService.updateStreak(false);
+      this.titleService.updateIsUpdated(false);
+    }
+  }
+
+  deleteTodo(id: number){
+    let index: number;
+    this.todos.forEach((a, i) => {
+      if(a.id === id){
+        index = i;
+        return;
+      }
+    });
+    let tmp1: Todo[] = this.todos.slice(0, index);
+    let tmp2: Todo[] = this.todos.slice(index + 1, this.todos.length);
+    tmp2.forEach(n => tmp1.push(n));
+    this.todos = tmp1;
+    this.updateTodos();
   }
 }

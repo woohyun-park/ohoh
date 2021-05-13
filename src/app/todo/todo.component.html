@@ -6,4 +6,8 @@
   (click)="todoButton.buttonOnClick()" (dblclick)="todoButton.buttonOnDblclick()">
 </app-todo-button>
 
-<button class="todo-add">+</button>
+<div class="todo-add">
+  <input [(ngModel)]="todoText" class="todo-add-text"/>
+  <button class="todo-add-button"
+    (click)="todoService.addTodo(todoText);todoText=''">+</button>
+</div>

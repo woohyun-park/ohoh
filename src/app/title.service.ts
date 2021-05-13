@@ -17,7 +17,7 @@ export class TitleService {
     this.userName = localStorage.userName !== undefined ? localStorage.userName : "";
     this.streak = localStorage.streak !== undefined ? localStorage.streak : 1;
     this.goal = localStorage.goal !== undefined ? localStorage.goal : "";
-    this.isUpdated = JSON.parse(localStorage.isUpdated);
+    this.isUpdated = localStorage.isUpdate !== undefined ? JSON.parse(localStorage.isUpdated) : false;
   }
 
   sendStreak(streak: number){
@@ -49,5 +49,10 @@ export class TitleService {
   updateGoal(goal: string): void {
     this.goal = goal;
     localStorage.goal = this.goal;
+  }
+
+  updateIsUpdated(isUpdated: boolean){
+    this.isUpdated = isUpdated;
+    localStorage.isUpdated = this.isUpdated;
   }
 }

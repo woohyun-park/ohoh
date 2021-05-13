@@ -17,14 +17,40 @@
 }
 
 .todo-add{
+  text-align: center;
+}
+
+.todo-add-text{
   all: unset;
 
-  display: block;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+
+  margin: 5px auto;
+  width: 350px;
+  height: 50px;
+
+  font-size: 20px;
+  background-color: white;
+
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 30px;
+
+  transition: 0.2s;
+}
+
+.todo-add-button{
+  all: unset;
+
+  position: relative;
+  display: inline-block;
   text-align: center;
+  top: 5px;
 
   width: 30px;
   height: 30px;
-  margin: auto;
+  margin-left: 15px;
 
   font-size: 30px;
   color: var(--color-brand);
@@ -36,7 +62,7 @@
   transition: 0.2s;
 }
 
-.todo-add:hover{
+.todo-add-button:hover{
   cursor: pointer;
 
   transform: scale(1.15);

@@ -17,7 +17,7 @@ export class TitleService {
     this.userName = localStorage.userName !== undefined ? localStorage.userName : "";
     this.streak = localStorage.streak !== undefined ? localStorage.streak : 1;
     this.goal = localStorage.goal !== undefined ? localStorage.goal : "";
-    this.isUpdated = localStorage.isUpdated;
+    this.isUpdated = JSON.parse(localStorage.isUpdated);
   }
 
   sendStreak(streak: number){
@@ -30,6 +30,7 @@ export class TitleService {
   }
 
   updateStreak(isPositive: boolean): void {
+    console.log(this.isUpdated, isPositive);
     if(!this.isUpdated && isPositive){
       this.streak++;
       this.sendStreak(this.streak);

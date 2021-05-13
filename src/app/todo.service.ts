@@ -9,7 +9,12 @@ export class TodoService {
   todos: Todo[];
 
   constructor(private titleService: TitleService) {
-    console.log(localStorage.todos);
+    // let tmp: Todo[] = [
+    //   { id: 1, text: "자바스크립트 스킬업 1챕터", isFinished: false},
+    //   { id: 2, text: "p5js 프로젝트", isFinished: false},
+    //   { id: 3, text: "깃허브 커밋", isFinished: false}
+    // ];
+    // localStorage.todos = JSON.stringify(tmp);
     this.todos = localStorage.todos !== undefined ? JSON.parse(localStorage.todos) : [];
   }
 
@@ -23,7 +28,7 @@ export class TodoService {
   }
 
   updateIsFinished(id: number, isFinished: boolean){
-    this.todos[id-1].isFinished = !this.todos[id-1].isFinished;
+    this.todos[id-1].isFinished = isFinished;
     this.updateTodos(this.todos);
     this.updateStreak();
   }

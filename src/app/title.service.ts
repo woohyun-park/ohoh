@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from "rxjs";
-import { TodoService } from "./todo.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,45 +14,53 @@ export class TitleService {
   isUpdated: boolean;
 
   constructor() {
-    this.userName = localStorage.userName !== undefined ? localStorage.userName : "";
-    this.streak = localStorage.streak !== undefined ? localStorage.streak : 0;
-    this.goal = localStorage.goal !== undefined ? localStorage.goal : "";
+    this.userName = localStorage.userName !== undefined ? JSON.parse(localStorage.userName) : "";
+    this.streak = localStorage.streak !== undefined ? JSON.parse(localStorage.streak) : 0;
+    this.goal = localStorage.goal !== undefined ? JSON.parse(localStorage.goal) : "";
     this.isUpdated = localStorage.isUpdated !== undefined ? JSON.parse(localStorage.isUpdated) : false;
   }
 
-  setStreakZero(){
-    this.streak = 0;
-    localStorage.streak = 0;
+  ngOnInit(){
+
   }
 
   sendStreak(streak: number){
     this.message.next(streak);
   }
 
+  setStreak(n: number){
+    this.streak = n;
+    localStorage.streak = JSON.stringify(n);
+  }
+
   updateUserName(userName: string): void {
     this.userName = userName;
-    localStorage.userName = this.userName;
+    localStorage.userName = JSON.stringify(this.userName);
   }
 
   updateStreak(isPositive: boolean): void {
     if(!this.isUpdated && isPositive){
+      //현재 streak과 localStorage의 streak을 업데이트
       this.streak++;
-      this.sendStreak(this.streak);
       localStorage.streak = this.streak;
+      //현재 isUpdated와 localStorage의 isUpdated를 업데이트
       this.isUpdated = true;
       localStorage.isUpdated = this.isUpdated;
-    } else if(this.isUpdated && !isPositive){
-      this.streak--;
+      //streak이 업데이트되었음을 title에 알려줌
       this.sendStreak(this.streak);
+    } else if(this.isUpdated && !isPositive){
+      //위와 동일
+      this.streak--;
       localStorage.streak = this.streak;
       this.isUpdated = false;
       localStorage.isUpdated = this.isUpdated;
+      this.sendStreak(this.streak);
     }
   }
 
   updateGoal(goal: string): void {
     this.goal = goal;
-    localStorage.goal = this.goal;
+    localStorage.goal = JSON.stringify(this.goal);
   }
 
   updateIsUpdated(isUpdated: boolean){

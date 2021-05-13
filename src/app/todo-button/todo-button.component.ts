@@ -12,15 +12,17 @@ export class TodoButtonComponent implements OnInit {
   @Input()
   todo: Todo;
   isSingleClick: Boolean = true;
-  textColor: string;
-  bgColor: string;
+  textColor: string = "#3C4AA7";
+  bgColor: string = "white";
+  curTextColor: string;
+  curBgColor: string;
 
   constructor(private titleService: TitleService,
     private todoService: TodoService) { }
 
   ngOnInit(): void {
-    this.textColor = this.todo.isFinished ? 'white' : '#3C4AA7';
-    this.bgColor = this.todo.isFinished ? '#3C4AA7' : 'white';
+    this.curTextColor = this.todo.isFinished ? this.bgColor : this.textColor;
+    this.curBgColor = this.todo.isFinished ? this.textColor : this.bgColor;
   }
 
   buttonOnClick(): void{
@@ -38,19 +40,17 @@ export class TodoButtonComponent implements OnInit {
   }
 
   changeColor(): void{
-    this.bgColor = this.bgColor === '#3C4AA7' ? 'white' : '#3C4AA7';
-    this.textColor = this.textColor === '#3C4AA7' ? 'white' : '#3C4AA7';
+    this.curBgColor = this.curBgColor === this.textColor ? this.bgColor : this.textColor;
+    this.curTextColor = this.curTextColor === this.textColor ? this.bgColor : this.textColor;
     this.todo.isFinished = !this.todo.isFinished
     this.todoService.updateIsFinished(this.todo.id, this.todo.isFinished);
-    // this.todoService.
-    // this.titleService.updateStreak(Todo.id);
   }
 
   getBGColor(): string{
-    return this.bgColor === undefined ? 'white' : this.bgColor;
+    return this.curBgColor === undefined ? this.bgColor : this.curBgColor;
   }
 
   getTextColor(): string{
-    return this.textColor === undefined ? '#3C4AA7' : this.textColor;
+    return this.curTextColor === undefined ? this.textColor : this.curTextColor;
   }
 }

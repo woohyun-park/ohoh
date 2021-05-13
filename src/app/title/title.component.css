@@ -22,7 +22,7 @@ input{
   color: var(--color-basic);
 }
 
-.userName-name{
+.userName__name{
   width: 260px;
 
   color: var(--color-brand);
@@ -35,7 +35,7 @@ input{
   right: 0;
 }
 
-.streak-num{
+.streak__num{
   width: 600px;
 
   text-align: right;
@@ -44,7 +44,7 @@ input{
   color: var(--color-brand);
 }
 
-.streak-text{
+.streak__text{
   position: relative;
   text-align: right;
   bottom: 20px;
@@ -58,7 +58,7 @@ input{
   color: var(--color-brand);
 }
 
-.goal-text{
+.goal__text{
   float: right;
   text-align: right;
 

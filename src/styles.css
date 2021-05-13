@@ -5,13 +5,13 @@
 }
 
 body{
-  margin: 0;
   display:block;
-  background: var(--bg-color);
   width: 600px;
   min-height: 100vh;
+
+  margin: 0;
   margin-left: auto;
   margin-right: auto;
-  /* border-style: solid;
-  border-color: white; */
+
+  background: var(--bg-color);
 }

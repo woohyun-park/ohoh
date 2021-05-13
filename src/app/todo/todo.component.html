@@ -1,11 +1,11 @@
-<div class="todo-run">
-  <div class="todo-line">
-    <div class="todo-line-white"></div>
-    <div class="todo-line-blue"
+<div class="todo__run">
+  <div class="todo__line">
+    <div class="todo__line--white"></div>
+    <div class="todo__line--blue"
       [ngStyle]="{'transform': todoService.runLine()}"
     ></div>
   </div>
-  <img class="todo-run-person" src="/assets/img/run.gif" alt="run.gif" [ngStyle]="{'left': todoService.runPerson()}">
+  <img class="todo__run--person" src="/assets/img/run.gif" alt="run.gif" [ngStyle]="{'left': todoService.runPerson()}">
 </div>
 
 <app-todo-button #todoButton *ngFor="let todo of todoService.todos"
@@ -14,8 +14,8 @@
   (click)="todoButton.buttonOnClick()" (dblclick)="todoButton.buttonOnDblclick()">
 </app-todo-button>
 
-<div class="todo-add">
-  <input [(ngModel)]="todoText" class="todo-add-text" placeholder="set your actions"/>
-  <button class="todo-add-button"
+<div class="todo__add">
+  <input [(ngModel)]="todoText" class="todo__add--text" placeholder="add your actions"/>
+  <button class="todo__add--button"
     (click)="todoService.addTodo(todoText);todoText=''">+</button>
 </div>

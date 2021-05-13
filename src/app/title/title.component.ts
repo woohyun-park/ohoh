@@ -13,6 +13,7 @@ export class TitleComponent implements OnInit {
   goal: string;
 
   constructor(private titleService: TitleService) {
+    //titleService에서 바뀌는 streak을 구독
     titleService.messageTransfer.subscribe(streak => {
       this.streak = streak;
     })
@@ -29,11 +30,15 @@ export class TitleComponent implements OnInit {
   }
 
   updateStreak(): void{
-    this.streak++;
     this.titleService.updateStreak(true);
   }
 
   updateGoal(): void {
     this.titleService.updateGoal(this.goal);
+  }
+
+  addStreak(): void{
+    this.streak++;
+    this.updateStreak();
   }
 }

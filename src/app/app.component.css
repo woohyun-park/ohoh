@@ -17,10 +17,12 @@
 .footer{
   width: 600px;
   height: 100px;
-    text-align: center;
+
+  text-align: center;
+
   background-color: var(--bg-color);
 }
 
-.footer-img{
+.footer__img{
   width: 100px;
 }

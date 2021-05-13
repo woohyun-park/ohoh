@@ -8,7 +8,7 @@
   min-height: 325px;
 }
 
-.todo-run{
+.todo__run{
   position: relative;
   display: block;
   text-align: center;
@@ -18,7 +18,7 @@
   margin-bottom: 50px;
 }
 
-.todo-line{
+.todo__line{
   margin:auto;
 
   width: 400px;
@@ -27,7 +27,7 @@
   overflow: hidden;
 }
 
-.todo-line-white{
+.todo__line--white{
   margin: auto;
 
   width: 400px;
@@ -36,7 +36,7 @@
   background-color: var(--color-basic);
 }
 
-.todo-line-blue{
+.todo__line--blue{
   margin: auto;
 
   width: 400px;
@@ -48,7 +48,7 @@
   transform: translate(-400px, -5px);
 }
 
-.todo-run-person{
+.todo__run--person{
   position: absolute;
   top: -80px;
   left: 50px;
@@ -59,11 +59,11 @@
   transition-timing-function: cubic-bezier();
 }
 
-.todo-add{
+.todo__add{
   text-align: center;
 }
 
-.todo-add-text{
+.todo__add--text{
   all: unset;
 
   display: inline-block;
@@ -83,7 +83,7 @@
   transition: 0.2s;
 }
 
-.todo-add-button{
+.todo__add--button{
   all: unset;
 
   position: relative;
@@ -105,7 +105,7 @@
   transition: 0.2s;
 }
 
-.todo-add-button:hover{
+.todo__add--button:hover{
   cursor: pointer;
 
   transform: scale(1.15);

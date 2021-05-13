@@ -27,7 +27,7 @@
   transform: scale(1.05);
 }
 
-.todo-button-check{
+.todo__button--check{
   position: absolute;
   top:5px;
   left:5px;
@@ -37,6 +37,6 @@
   color: var(--color-basic);
 }
 
-.todo-button-text{
+.todo__button--text{
   text-align: center;
 }

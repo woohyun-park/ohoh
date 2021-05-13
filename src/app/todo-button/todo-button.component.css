@@ -33,6 +33,8 @@
   left:5px;
 
   margin: 10px;
+
+  color: var(--color-basic);
 }
 
 .todo-button-text{

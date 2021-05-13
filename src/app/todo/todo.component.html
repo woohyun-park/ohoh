@@ -5,7 +5,7 @@
       [ngStyle]="{'transform': todoService.runLine()}"
     ></div>
   </div>
-  <img class="todo__run--person" src="/assets/img/run.gif" alt="run.gif" [ngStyle]="{'left': todoService.runPerson()}">
+  <img class="todo__run--person" src="assets/images/run.gif" alt="run.gif" [ngStyle]="{'left': todoService.runPerson()}">
 </div>
 
 <app-todo-button #todoButton *ngFor="let todo of todoService.todos"

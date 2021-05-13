@@ -5,27 +5,23 @@ import { Subject, Observable } from "rxjs";
   providedIn: 'root'
 })
 export class TitleService {
-  private userNameT = new Subject<string>();
-  private streakT = new Subject<number>();
-  private goalT = new Subject<string>();
-  streakTransfer = this.streakT.asObservable();
+  private message = new Subject<number>();
+  messageTransfer = this.message.asObservable();
 
   userName: string = "";
   streak: number = 1;
   goal: string = "";
+  isUpdated: boolean = false;
 
   constructor() {
     this.userName = localStorage.userName !== undefined ? localStorage.userName : "";
     this.streak = localStorage.streak !== undefined ? localStorage.streak : 1;
     this.goal = localStorage.goal !== undefined ? localStorage.goal : "";
-  }
-
-  ngOnInit(){
-
+    this.isUpdated = localStorage.isUpdated;
   }
 
   sendStreak(streak: number){
-    this.streakT.next(streak);
+    this.message.next(streak);
   }
 
   updateUserName(userName: string): void {
@@ -33,10 +29,20 @@ export class TitleService {
     localStorage.userName = this.userName;
   }
 
-  updateStreak(): void {
-    this.streak++;
-    this.sendStreak(this.streak);
-    localStorage.streak = this.streak;
+  updateStreak(isPositive: boolean): void {
+    if(!this.isUpdated && isPositive){
+      this.streak++;
+      this.sendStreak(this.streak);
+      localStorage.streak = this.streak;
+      this.isUpdated = true;
+      localStorage.isUpdated = this.isUpdated;
+    } else if(this.isUpdated && !isPositive){
+      this.streak--;
+      this.sendStreak(this.streak);
+      localStorage.streak = this.streak;
+      this.isUpdated = false;
+      localStorage.isUpdated = this.isUpdated;
+    }
   }
 
   updateGoal(goal: string): void {

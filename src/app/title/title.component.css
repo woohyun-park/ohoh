@@ -35,7 +35,7 @@ input{
   right: 0;
 }
 
-.streak--num{
+.streak-num{
   width: 600px;
 
   text-align: right;
@@ -44,7 +44,7 @@ input{
   color: var(--color-brand);
 }
 
-.streak--text{
+.streak-text{
   position: relative;
   text-align: right;
   bottom: 20px;

@@ -1,6 +1,6 @@
 <div class="todo-run">Running Person will be here</div>
 
-<app-todo-button #todoButton *ngFor="let todo of todos"
+<app-todo-button #todoButton *ngFor="let todo of todoService.todos"
   [todo]="todo"
   [ngStyle]="{'background-color': todoButton.getBGColor(), 'color': todoButton.getTextColor()}"
   (click)="todoButton.buttonOnClick()" (dblclick)="todoButton.buttonOnDblclick()">

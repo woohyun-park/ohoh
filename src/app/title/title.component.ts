@@ -13,9 +13,8 @@ export class TitleComponent implements OnInit {
   goal: string;
 
   constructor(private titleService: TitleService) {
-    titleService.streakTransfer.subscribe(streak => {
+    titleService.messageTransfer.subscribe(streak => {
       this.streak = streak;
-      console.log(streak);
     })
   }
 
@@ -25,13 +24,13 @@ export class TitleComponent implements OnInit {
     this.goal = this.titleService.goal;
   }
 
-  updateStreak(): void{
-    this.streak++;
-    this.titleService.updateStreak();
-  }
-
   updateUserName(): void {
     this.titleService.updateUserName(this.userName);
+  }
+
+  updateStreak(): void{
+    this.streak++;
+    this.titleService.updateStreak(true);
   }
 
   updateGoal(): void {

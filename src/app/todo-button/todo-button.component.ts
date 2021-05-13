@@ -46,7 +46,7 @@ export class TodoButtonComponent implements OnInit {
     this.todoService.updateIsFinished(this.todo.id, this.todo.isFinished);
   }
 
-  getBGColor(): string{
+  getBgColor(): string{
     return this.curBgColor === undefined ? this.bgColor : this.curBgColor;
   }
 

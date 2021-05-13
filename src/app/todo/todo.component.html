@@ -10,7 +10,7 @@
 
 <app-todo-button #todoButton *ngFor="let todo of todoService.todos"
   [todo]="todo"
-  [ngStyle]="{'background-color': todoButton.getBGColor(), 'color': todoButton.getTextColor()}"
+  [ngStyle]="{'background-color': todoButton.getBgColor(), 'color': todoButton.getTextColor()}"
   (click)="todoButton.buttonOnClick()" (dblclick)="todoButton.buttonOnDblclick()">
 </app-todo-button>
 

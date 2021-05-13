@@ -1,13 +1,9 @@
 <div class="todo-run">Running Person will be here</div>
-<!-- <div *ngFor="let todo of todos" class="todo-button"
-  (click)="buttonOnClick()" (dblclick)="buttonOnDblclick()">
-  <div class="todo-button-check">V</div>
-  <div class="todo-button-text">{{todo}}</div>
-</div> -->
 
 <app-todo-button #todoButton *ngFor="let todo of todos"
   [todo]="todo"
   [ngStyle]="{'background-color': todoButton.getBGColor(), 'color': todoButton.getTextColor()}"
   (click)="todoButton.buttonOnClick()" (dblclick)="todoButton.buttonOnDblclick()">
 </app-todo-button>
+
 <button class="todo-add">+</button>

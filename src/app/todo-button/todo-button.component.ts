@@ -20,7 +20,7 @@ export class TodoButtonComponent implements OnInit {
     this.isSingleClick = true;
       setTimeout(() => {
         if(this.isSingleClick){
-          this.changeStatus();
+          this.changeColor();
         }
       }, 250);
   }
@@ -30,7 +30,7 @@ export class TodoButtonComponent implements OnInit {
     console.log("dbclicked");
   }
 
-  changeStatus(): void{
+  changeColor(): void{
     this.bgColor = this.bgColor === '#3C4AA7' ? 'white' : '#3C4AA7';
     this.textColor = this.textColor === '#3C4AA7' ? 'white' : '#3C4AA7';
   }

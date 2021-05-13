@@ -1,5 +1,7 @@
 :root{
   --bg-color: #E1E2E1;
+
+  background: white;
 }
 
 body{
@@ -10,6 +12,6 @@ body{
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  border-style: solid;
-  border-color: white;
+  /* border-style: solid;
+  border-color: white; */
 }

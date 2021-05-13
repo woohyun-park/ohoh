@@ -4,11 +4,15 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
+import { TodoComponent } from './todo/todo.component';
+import { TodoButtonComponent } from './todo-button/todo-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TitleComponent
+    TitleComponent,
+    TodoComponent,
+    TodoButtonComponent
   ],
   imports: [
     BrowserModule,

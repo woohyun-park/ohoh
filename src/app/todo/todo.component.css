@@ -1,0 +1,36 @@
+:host{
+  --font-color-basic: white;
+  --font-color-brand: #3C4AA7;
+
+  display: block;
+  height: 450px;
+  width: 600px;
+}
+
+.todo-run{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.todo-add{
+  all: unset;
+  display: block;
+  margin: auto;
+  background-color:white;
+  color: var(--font-color-brand);
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 5px 5px 5px grey;
+  transition: 0.2s;
+}
+
+.todo-add:hover{
+  transform: scale(1.15);
+  cursor: pointer;
+}

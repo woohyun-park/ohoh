@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class TitleComponent implements OnInit {
   userName: string = "";
   streak: number = 0;
-  goal: string = ""
+  goal: string = "";
 
   constructor() { }
 

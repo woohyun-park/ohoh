@@ -1,0 +1,35 @@
+:host{
+  all: unset;
+  display: flex;
+  margin: 20px auto;
+  width: 400px;
+  height: 50px;
+
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 30px;
+
+  color: var(--font-color-brand);
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+:host:hover{
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.todo-button-check{
+  position: absolute;
+  top:5px;
+  left:5px;
+  margin: 10px;
+}
+
+.todo-button-text{
+  text-align: center;
+}

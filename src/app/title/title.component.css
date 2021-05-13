@@ -1,16 +1,10 @@
 :host{
-  --bg-color: #E1E2E1;
   --font-color-basic: white;
   --font-color-brand: #3C4AA7;
 
-  display:block;
-  background: var(--bg-color);
+  display: block;
+  height: 450px;
   width: 600px;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 input{
@@ -27,7 +21,7 @@ input{
 }
 
 .userName-name{
-  width: 300px;
+  width: 260px;
   color: var(--font-color-brand);
 }
 

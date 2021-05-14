@@ -65,11 +65,7 @@ input{
   width: 500px;
   margin-top: 90px;
 
-  /* -webkit-text-stroke: 1px white;
-  text-shadow:
-  3px 3px 0 white,
-  -3px -3px 0 white,
-  3px -3px 0 white,
-  -3px 3px 0 white,
-  3px 3px 0 white; */
+  font-weight: bold;
+  -webkit-text-stroke: .5px white;
+  text-shadow: 3px 3px 10px grey;
 }

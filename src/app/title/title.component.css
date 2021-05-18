@@ -2,7 +2,8 @@
   --color-basic: white;
   --color-brand: #3C4AA7;
 
-  display: block;
+  display:block;
+  justify-content: space-between;
 
   height: 450px;
   width: 100vw;
@@ -14,9 +15,15 @@ input{
 }
 
 .userName{
+  width: 20%;
+  height: 100%;
+}
+
+.userName__cont{
   position:relative;
   transform: rotate(90deg);
   transform-origin: left top;
+  width: 450px;
   left: 55px;
 
   font-size: 50px;
@@ -30,43 +37,72 @@ input{
 }
 
 .streak{
-  position: relative;
+  /* position: relative;
   float: right;
   bottom: 65px;
-  right: 0;
+  right: 0; */
+
+
+
+  width: 20%;
+  min-width: 250px;
 }
 
 .streak__num{
-  width: 600px;
+  /* width: 600px;
 
-  text-align: right;
+  text-align: right; */
 
   font-size: 100px;
   color: var(--color-brand);
+
+
+
+  width:100%;
+  text-align: right;
 }
 
 .streak__text{
-  position: relative;
+  /* position: relative;
   text-align: right;
-  bottom: 20px;
+  bottom: 20px; */
 
   font-size: 130%;
   color: var(--color-basic);
+
+
+
+  text-align: right;
+  margin-top: -.5em;
 }
 
 .goal{
   font-size: 50px;
   color: var(--color-brand);
+
+
+
+  text-align:right;
 }
 
 .goal__text{
-  float: right;
+  /* float: right;
   text-align: right;
 
   width: 500px;
-  margin-top: 90px;
+  margin-top: 90px; */
 
   font-weight: bold;
   -webkit-text-stroke: .5px white;
-  text-shadow: 3px 3px 10px grey;
+  text-shadow: 3px 3px 8px grey;
+
+
+
+  width: 100%;
+}
+
+.test{
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
 }

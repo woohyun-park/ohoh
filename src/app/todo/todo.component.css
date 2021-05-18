@@ -3,7 +3,8 @@
   --color-brand: #3C4AA7;
 
   display: block;
-  width: 600px;
+  width: 100vw;
+  max-width: 600px;
   padding-bottom: 50px;
   min-height: 325px;
 }
@@ -60,7 +61,15 @@
 }
 
 .todo__add{
+  display: flex;
   text-align: center;
+  align-items: baseline;
+  justify-content: space-between;
+
+  width: 66%;
+  max-width: 400px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .todo__add--text{
@@ -70,8 +79,7 @@
   align-items: center;
   justify-content: center;
 
-  margin: 5px auto;
-  width: 350px;
+  width: 84%;
   height: 50px;
 
   font-size: 20px;
@@ -93,7 +101,6 @@
 
   width: 30px;
   height: 30px;
-  margin-left: 15px;
 
   font-size: 30px;
   color: var(--color-brand);

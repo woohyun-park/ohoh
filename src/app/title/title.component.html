@@ -1,15 +1,20 @@
-<div class="userName">hi,
-  <input [(ngModel)]="userName" (ngModelChange)="updateUserName()"
-    class="userName__name" placeholder="name"/>
+<div class="top1">
+  <div class="userName">hi,
+    <input [(ngModel)]="userName" (ngModelChange)="updateUserName()"
+      class="userName__name" placeholder="name"/>
+  </div>
 </div>
-
-<div class="streak">
-  <input [ngModel]="streak" (ngModelChange)="addStreak()"
-    class="streak__num" readonly/>
-  <div class="streak__text">days streak</div>
+<div class="top2"></div>
+<div class="top3">
+  <div class="streak">
+    <input [ngModel]="streak" (ngModelChange)="addStreak()"
+      class="streak__num" readonly/>
+    <div class="streak__text">days streak</div>
+  </div>
 </div>
-
-<div class="goal">
-  <input [(ngModel)]="goal" (ngModelChange)="updateGoal()"
-    class="goal__text" placeholder="set your goal"/>
+<div class="bottom1">
+  <div class="goal">
+    <input [(ngModel)]="goal" (ngModelChange)="updateGoal()"
+      class="goal__text" placeholder="set your goal"/>
+  </div>
 </div>

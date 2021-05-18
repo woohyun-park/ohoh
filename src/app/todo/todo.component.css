@@ -22,7 +22,8 @@
 .todo__line{
   margin:auto;
 
-  width: 400px;
+  width: 66%;
+  max-width: 400px;
   height: 5px;
 
   overflow: hidden;
@@ -31,7 +32,8 @@
 .todo__line--white{
   margin: auto;
 
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 5px;
 
   background-color: var(--color-basic);
@@ -40,7 +42,8 @@
 .todo__line--blue{
   margin: auto;
 
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 5px;
 
   background-color: var(--color-brand);

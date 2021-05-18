@@ -128,7 +128,11 @@ export class TodoService {
         numFinished++;
       }
     });
-    return `translate(${400*numFinished/this.todos.length-400}px, -5px)`;
+
+    let width = parseInt(window.getComputedStyle(document.getElementsByClassName("todo__line")[0]).width);
+    let ratio = numFinished / this.todos.length;
+
+    return `translate(${width * ratio - width}px, -5px)`;
   }
 
   runPerson(){
@@ -139,7 +143,10 @@ export class TodoService {
         numFinished++;
       }
     });
-    return `${380*numFinished/this.todos.length + 50}px`;
+    let width = parseInt(window.getComputedStyle(document.getElementsByClassName("todo__line")[0]).width);
+    let ratio = numFinished / this.todos.length;
+
+    return `${width * ratio + 50 * (width / 400) * (width / 400)}px`;
   }
 
   //날짜를 20210513과 같은 형식으로 변환해주는 함수

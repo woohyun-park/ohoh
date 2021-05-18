@@ -1,12 +1,14 @@
 :root{
   --bg-color: #E1E2E1;
 
+  width: 100vw;
   background: white;
+  overflow: hidden;
 }
 
 body{
   display:block;
-  width: 100%;
+  width: 100vw;
   max-width: 600px;
   min-height: 100vh;
 

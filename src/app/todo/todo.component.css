@@ -120,3 +120,13 @@
 
   transform: scale(1.15);
 }
+
+@media screen and (max-width: 480px)
+{
+  :host{
+    padding-bottom: 0px;
+  }
+  .todo__run{
+    margin-bottom: 6vh;
+  }
+}

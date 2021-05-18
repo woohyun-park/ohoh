@@ -20,6 +20,12 @@
   border-radius: 30px;
 
   transition: 0.2s;
+
+
+/*
+  height:7vh;
+  align-items:center;
+  justify-content: center; */
 }
 
 :host:hover{
@@ -40,4 +46,11 @@
 
 .todo__button--text{
   text-align: center;
+}
+
+@media screen and (max-width: 480px)
+{
+  :host{
+    margin: 0.8em auto;
+  }
 }

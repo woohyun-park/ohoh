@@ -3,7 +3,11 @@
 
   width: 100vw;
   background: white;
-  overflow: hidden;
+  -ms-overflow-style: none;
+}
+
+:root::-webkit-scrollbar{
+  display:none;
 }
 
 body{

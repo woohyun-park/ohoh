@@ -20,6 +20,7 @@ export class TodoService {
     this.initDate();
   }
 
+  //페이지 사이즈가 변경될때 달리는 사람의 애니메이션 또한 변경될 수 있도록한다
   resize(){
     window.addEventListener('resize', () => {
       this.runPerson();

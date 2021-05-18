@@ -3,6 +3,7 @@
   --color-brand: #3C4AA7;
 
   display: block;
+
   width: 100vw;
   max-width: 600px;
   padding-bottom: 50px;
@@ -10,8 +11,8 @@
 }
 
 .todo__run{
-  position: relative;
   display: block;
+  position: relative;
   text-align: center;
 
   margin-left: auto;
@@ -20,31 +21,28 @@
 }
 
 .todo__line{
-  margin:auto;
-
   width: 66%;
   max-width: 400px;
   height: 5px;
+  margin:auto;
 
   overflow: hidden;
 }
 
 .todo__line--white{
-  margin: auto;
-
   width: 100%;
   max-width: 400px;
   height: 5px;
+  margin: auto;
 
   background-color: var(--color-basic);
 }
 
 .todo__line--blue{
-  margin: auto;
-
   width: 100%;
   max-width: 400px;
   height: 5px;
+  margin: auto;
 
   background-color: var(--color-brand);
 
@@ -87,7 +85,6 @@
 
   font-size: 20px;
   background-color: white;
-
   box-shadow: 5px 5px 5px grey;
   border-radius: 30px;
 
@@ -108,7 +105,6 @@
   font-size: 30px;
   color: var(--color-brand);
   background-color: var(--color-basic);
-
   border-radius: 30px;
   box-shadow: 5px 5px 5px grey;
 

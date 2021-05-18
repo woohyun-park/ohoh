@@ -14,6 +14,12 @@ input{
   all: unset;
 }
 
+.userNameAndGoal{
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .userName{
   width: 20%;
   height: 100%;
@@ -23,8 +29,9 @@ input{
   position:relative;
   transform: rotate(90deg);
   transform-origin: left top;
-  width: 450px;
   left: 55px;
+
+  width: 450px;
 
   font-size: 50px;
   color: var(--color-basic);
@@ -37,74 +44,41 @@ input{
 }
 
 .streak{
-  /* position: relative;
-  float: right;
-  bottom: 65px;
-  right: 0; */
-
-
-
   width: 20%;
   min-width: 250px;
 }
 
 .streak__num{
-  /* width: 600px;
+  text-align: right;
 
-  text-align: right; */
+  width:100%;
 
   font-size: 100px;
   color: var(--color-brand);
-
-
-
-  width:100%;
-  text-align: right;
 }
 
 .streak__text{
-  /* position: relative;
   text-align: right;
-  bottom: 20px; */
+
+  margin-top: -.5em;
 
   font-size: 130%;
   color: var(--color-basic);
-
-
-
-  text-align: right;
-  margin-top: -.5em;
 }
 
 .goal{
+  text-align:right;
+
   font-size: 50px;
   color: var(--color-brand);
-
-
-
-  text-align:right;
 }
 
 .goal__text{
-  /* float: right;
-  text-align: right;
-
-  width: 500px;
-  margin-top: 90px; */
+  width: 100%;
 
   font-weight: bold;
   -webkit-text-stroke: .5px white;
   text-shadow: 3px 3px 8px grey;
-
-
-
-  width: 100%;
-}
-
-.test{
-  height: 60%;
-  display: flex;
-  justify-content: space-between;
 }
 
 @media screen and (max-width: 480px)
@@ -115,7 +89,7 @@ input{
     margin-bottom:3.5em;
   }
 
-  .test{
+  .userNameAndGoal{
     height: 70%;
   }
 }

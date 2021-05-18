@@ -16,7 +16,15 @@ export class TodoService {
     this.id = localStorage.id !== undefined ? JSON.parse(localStorage.id) : 1;
     this.prevDate = localStorage.prevDate !== undefined ? JSON.parse(localStorage.prevDate) : this.getDateStr(new Date);
 
+    this.resize();
     this.initDate();
+  }
+
+  resize(){
+    window.addEventListener('resize', () => {
+      this.runPerson();
+      this.runLine();
+    });
   }
 
   initDate(){
@@ -131,7 +139,6 @@ export class TodoService {
 
     let width = parseInt(window.getComputedStyle(document.getElementsByClassName("todo__line")[0]).width);
     let ratio = numFinished / this.todos.length;
-
     return `translate(${width * ratio - width}px, -5px)`;
   }
 
@@ -143,9 +150,9 @@ export class TodoService {
         numFinished++;
       }
     });
+
     let width = parseInt(window.getComputedStyle(document.getElementsByClassName("todo__line")[0]).width);
     let ratio = numFinished / this.todos.length;
-
     return `${width * ratio + 50 * (width / 400) * (width / 400)}px`;
   }
 

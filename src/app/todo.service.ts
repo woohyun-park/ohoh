@@ -93,9 +93,18 @@ export class TodoService {
     //isFinished가 false인 todo가 0개라면
     //모두 finished 되었다는 뜻이므로, streak을 +로 업데이트한다
     //그렇지 않다면 streak을 -로 업데이트한다
-    if(this.todos.filter(n => {
-      return !n.isFinished;
-    }).length === 0){
+    let notDone = 0;
+    let inputs = document.getElementsByClassName("todo__check")[0].getElementsByTagName("input");
+    for(let i = 0; i < inputs.length; i++){
+      if(!(inputs[i].checked))
+        notDone++;
+    }
+    this.todos.forEach(n => {
+      if(!n.isFinished)
+        notDone++;
+    });
+
+    if(notDone === 0){
       this.titleService.updateStreak(true);
     } else {
       this.titleService.updateStreak(false);
@@ -138,8 +147,15 @@ export class TodoService {
       }
     });
 
+    let inputs = document.getElementsByClassName("todo__check")[0].getElementsByTagName("input");
+    let numChecked = 0;
+    for(let i = 0; i < inputs.length; i++){
+      if(inputs[i].checked)
+        numChecked++;
+    }
+
     let width = parseInt(window.getComputedStyle(document.getElementsByClassName("todo__line")[0]).width);
-    let ratio = numFinished / this.todos.length;
+    let ratio = (numFinished + numChecked) / (this.todos.length + 5);
     return `translate(${width * ratio - width}px, -5px)`;
   }
 
@@ -152,8 +168,15 @@ export class TodoService {
       }
     });
 
+    let inputs = document.getElementsByClassName("todo__check")[0].getElementsByTagName("input");
+    let numChecked = 0;
+    for(let i = 0; i < inputs.length; i++){
+      if(inputs[i].checked)
+        numChecked++;
+    }
+
     let width = parseInt(window.getComputedStyle(document.getElementsByClassName("todo__line")[0]).width);
-    let ratio = numFinished / this.todos.length;
+    let ratio = (numFinished + numChecked) / (this.todos.length + 5);
     return `${width * ratio + 50 * (width / 400) * (width / 400)}px`;
   }
 

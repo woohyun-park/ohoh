@@ -8,6 +8,27 @@
   <img class="todo__run--person" src="assets/images/run.gif" alt="run.gif" [ngStyle]="{'left': todoService.runPerson()}">
 </div>
 
+<!-- <div class="todo__checkName">
+  <div>게임</div>
+  <div>손톱</div>
+  <div>단식</div>
+  <div>운동</div>
+  <div>딴짓</div>
+</div> -->
+
+<form class="todo__check">
+  <div class="todo__checkName">게임</div>
+  <input type="checkbox" id="1" (click)="todoService.runPerson();todoService.runLine();todoService.updateStreak();"><label for="1"></label>
+  <div class="todo__checkName">손톱</div>
+  <input type="checkbox" id="2" (click)="todoService.runPerson();todoService.runLine();todoService.updateStreak();"><label for="2"></label>
+  <div class="todo__checkName">단식</div>
+  <input type="checkbox" id="3" (click)="todoService.runPerson();todoService.runLine();todoService.updateStreak();"><label for="3"></label>
+  <div class="todo__checkName">운동</div>
+  <input type="checkbox" id="4" (click)="todoService.runPerson();todoService.runLine();todoService.updateStreak();"><label for="4"></label>
+  <div class="todo__checkName">딴짓</div>
+  <input type="checkbox" id="5" (click)="todoService.runPerson();todoService.runLine();todoService.updateStreak();"><label for="5"></label>
+</form>
+
 <app-todo-button #todoButton *ngFor="let todo of todoService.todos"
   [todo]="todo"
   [ngStyle]="{'background-color': todoButton.getBgColor(), 'color': todoButton.getTextColor()}"

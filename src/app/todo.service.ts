@@ -94,11 +94,11 @@ export class TodoService {
     //모두 finished 되었다는 뜻이므로, streak을 +로 업데이트한다
     //그렇지 않다면 streak을 -로 업데이트한다
     let notDone = 0;
-    let inputs = document.getElementsByClassName("todo__check")[0].getElementsByTagName("input");
-    for(let i = 0; i < inputs.length; i++){
-      if(!(inputs[i].checked))
-        notDone++;
-    }
+    // let inputs = document.getElementsByClassName("todo__check")[0].getElementsByTagName("input");
+    // for(let i = 0; i < inputs.length; i++){
+    //   if(!(inputs[i].checked))
+    //     notDone++;
+    // }
     this.todos.forEach(n => {
       if(!n.isFinished)
         notDone++;
